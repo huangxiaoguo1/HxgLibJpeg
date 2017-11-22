@@ -96,17 +96,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             final Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
             final String path = FileUtils.createFile(this.getApplicationContext(),
                     String.valueOf(System.currentTimeMillis()));
-            new AsyncTask<Void, Void, Void>() {
+            new AsyncTask<Void, Void, String>() {
 
                 @Override
-                protected Void doInBackground(Void... voids) {
+                protected String doInBackground(Void... voids) {
                     NativeUtil.compressBitmap(bitmap, path);
-                    return null;
+                    return path;
                 }
 
                 @Override
-                protected void onPostExecute(Void aVoid) {
-                    super.onPostExecute(aVoid);
+                protected void onPostExecute(String path) {
+                    super.onPostExecute(path);
                     ImageLoadUtil.display(MainActivity.this.getApplicationContext(), image, path);
                     ImageLoadUtil.displayCircle(MainActivity.this.getApplicationContext(), imageHead, path);
                 }
