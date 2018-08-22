@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.huangxiaoguo1'// huangxiaoguo1代表你github名字
 android {
     compileSdkVersion 26
     buildToolsVersion '26.0.2'
