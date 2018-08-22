@@ -1,4 +1,4 @@
-package tsou.cn.imagecompresscommon.utils;
+package net.bither.util;
 
 import android.content.Context;
 import android.os.Environment;
@@ -9,7 +9,7 @@ import java.io.File;
  * Created by Administrator on 2017/11/3 0003.
  */
 
-public class FileUtils {
+public class CompressFileUtils {
     public static String SDPATH = Environment.getExternalStorageDirectory() + "/huangxiaoguo/";
 
     public static String createFile(Context context, String picName) {

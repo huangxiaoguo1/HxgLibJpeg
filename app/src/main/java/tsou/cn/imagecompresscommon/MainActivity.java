@@ -21,7 +21,7 @@ import net.bither.util.NativeUtil;
 
 import java.io.IOException;
 
-import tsou.cn.imagecompresscommon.utils.FileUtils;
+import net.bither.util.CompressFileUtils;
 import tsou.cn.imagecompresscommon.utils.ImageLoadUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void compressImage(Uri uri) {
         try {
             final Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-            final String path = FileUtils.createFile(this.getApplicationContext(),
+            final String path = CompressFileUtils.createFile(this.getApplicationContext(),
                     String.valueOf(System.currentTimeMillis()));
             new AsyncTask<Void, Void, String>() {
 
